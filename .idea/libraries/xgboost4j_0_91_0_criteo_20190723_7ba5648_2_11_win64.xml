@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="xgboost4j-0.91.0-criteo-20190723-7ba5648_2.11-win64">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../Additional_Jar/xgboost4j-0.91.0-criteo-20190723-7ba5648_2.11-win64.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

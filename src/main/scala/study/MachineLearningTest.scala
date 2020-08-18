@@ -1,7 +1,7 @@
 package study
 
-import ml.dmlc.xgboost4j.java.XGBoost
-import ml.dmlc.xgboost4j.scala.spark.XGBoostClassifier
+//import ml.dmlc.xgboost4j.java.XGBoost
+//import ml.dmlc.xgboost4j.scala.spark.XGBoostClassifier
 import org.apache.spark.SparkConf
 import org.apache.spark.ml.{Pipeline, PipelineModel}
 import org.apache.spark.ml.classification.{DecisionTreeClassifier, LinearSVC, LogisticRegression, LogisticRegressionModel, RandomForestClassifier}
@@ -164,9 +164,9 @@ class MachineLearningTest {
     val stringIndexerModel: StringIndexerModel = new StringIndexer().setInputCol("label").setOutputCol("index_label").fit(trainSet)
 
 
-//    val logisticRegression: LogisticRegression = new LogisticRegression().setFeaturesCol("vectorFeatures").setLabelCol("index_label").setPredictionCol("prediction")
+    val logisticRegression: LogisticRegression = new LogisticRegression().setFeaturesCol("vectorFeatures").setLabelCol("index_label").setPredictionCol("prediction")
 
-//    val pipeline: Pipeline = new Pipeline().setStages(Array(stringIndexerModel,logisticRegression))
+    val pipeline: Pipeline = new Pipeline().setStages(Array(stringIndexerModel,logisticRegression))
 
 //    val decisionTreeClassifier: DecisionTreeClassifier = new DecisionTreeClassifier().setFeaturesCol("vectorFeatures").setLabelCol("index_label").setPredictionCol("prediction")
 
@@ -180,9 +180,9 @@ class MachineLearningTest {
 //
 //    val pipeline: Pipeline = new Pipeline().setStages(Array(stringIndexerModel, linearSVC))
     
-    val xGBoostClassifier: XGBoostClassifier = new XGBoostClassifier().setFeaturesCol("vectorFeatures").setLabelCol("index_label").setPredictionCol("prediction").setMaxDepth(5).setEta(0.05).setNumClass(3).setObjective("multi:softprob")
-
-    val pipeline: Pipeline = new Pipeline().setStages(Array(stringIndexerModel, xGBoostClassifier))
+//    val xGBoostClassifier: XGBoostClassifier = new XGBoostClassifier().setFeaturesCol("vectorFeatures").setLabelCol("index_label").setPredictionCol("prediction").setMaxDepth(5).setEta(0.05).setNumClass(3).setObjective("multi:softprob")
+//
+//    val pipeline: Pipeline = new Pipeline().setStages(Array(stringIndexerModel, xGBoostClassifier))
 
     val pipelineModel: PipelineModel = pipeline.fit(trainSet)
 
